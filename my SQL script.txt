@@ -1,0 +1,40 @@
+CREATE USER 'securityuser'@'localhost' IDENTIFIED BY 'securityuser';
+
+GRANT ALL PRIVILEGES ON * . * TO 'securityuser'@'localhost';
+
+CREATE DATABASE  bank_db;
+
+USE bank_db;
+
+CREATE TABLE clients(
+  id int NOT NULL AUTO_INCREMENT,
+  name varchar(15),
+  surname varchar(15),
+  bank_account int(15),
+  type_of_card varchar(20),
+  PRIMARY KEY (id)
+) ;
+
+ 
+INSERT INTO bank_db.clients (name, surname, bank_account, type_of_card) 
+VALUES
+('Daniel', 'Chen', 5000, 'mastercard_basic'),
+('John', 'Cenna', 100000, 'mastercard_gold'), 
+('Bruce', 'Ernst', 2000, 'visa_gold'),
+('David', 'Austin', 9000, 'visa_basic'),
+('Valli', 'Pataballa', 4000, 'visa_gold'),
+('Nancy', 'Lorentz', 5000, 'visa_gold'),
+('Diana', 'Greenberg', 25000, 'visa_gold'),
+('Ismaell', 'Sciarra', 45000, 'visa_basic'),
+('Jose', 'Urman', 345000, 'mastercard_gold'),
+('Luis', 'Black', 5000, 'visa_gold'),
+('Den', 'Raphaely', 5000, 'mastercard_basic'),
+('Daniel', 'Chen', 144000, 'visa_gold'),
+('Alexander', 'Hamilton', 35000, 'visa_gold'),
+('Shelli', 'Baida', 46000, 'visa_basic'),
+('Steven', 'Sigal', 95000, 'mastercard_gold'),
+('Guy', 'Himuro', 12000, 'mastercard_gold'),
+('Karen', 'Colmenares', 5000, 'visa_gold'),
+('Matthew', 'Weiss', 45000, 'visa_basic'),
+('Adam', 'Savage', 100000, 'visa_gold'),
+('Kevin', 'Prince', 8500, 'mastercard_gold');
